@@ -1,9 +1,11 @@
 import TodoItem from "./TodoItem"
 
-const TodoList = ({list})=>{
+const TodoList = ({list,handlechange1})=>{
+
+    
 
     return (
-        <div>
+        <div onChange={handlechange1}>
             {list.map((item)=><TodoItem item={item}></TodoItem>)}
         </div>
     )

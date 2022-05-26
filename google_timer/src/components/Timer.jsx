@@ -1,19 +1,20 @@
 
-import { useState , useEffect } from "react"
+import { useState , useEffect, useRef} from "react"
 const Timer = ()=>{
 
     const [text,setText] = useState(0)
 
     const [show,setShow] = useState(true)
 
+    const intial = useRef()
+
     const [time, setTime] = useState(null)
 
 
     const secondsToTime=(e)=>{
 
-        if(e<=0){
+        if(e<="0"){
             clearInterval(time)
-            setTime(null)
             return "Time is over"
         }
         var h = Math.floor(e / 3600).toString().padStart(2,'0'),
@@ -45,12 +46,8 @@ const Timer = ()=>{
     }
 
     const reset = ()=>{
-        clearInterval(time)
-        const Time = setInterval(()=>{
-            setText((prev)=>prev-1)
-        },1000)
-
-        setTime(Time)
+        
+        setText(intial.current)
 
 
     }
@@ -71,7 +68,10 @@ const Timer = ()=>{
 
     return (
         <>
-            <div>{show ? <><input type="number" onChange={(e)=>setText(e.target.value)} /><label>secs</label></> : <h1 onClick={setall}>{secondsToTime(text)}</h1>}</div>
+            <div>{show ? <><input type="number" onChange={(e)=>{
+                intial.current = e.target.value
+                setText(e.target.value)
+            } }/><label>secs</label></> : <h1 onClick={setall}>{secondsToTime(text)}</h1>}</div>
 
             <button onClick={start}>start</button>
             <button onClick={reset}>Reset</button>

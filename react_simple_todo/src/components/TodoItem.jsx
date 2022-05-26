@@ -1,9 +1,8 @@
 const TodoItem = ({item})=>{
 
-
     return (<>
 
-    <input type="radio" value={item} />{item}<br />
+    <input type="checkbox" id={item.id} value={item.value} />{item.value}<br />
     </>)
 
 }
