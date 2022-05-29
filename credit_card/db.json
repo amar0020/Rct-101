@@ -1,0 +1,37 @@
+{
+  "post": [
+    {
+      "Name": "12312",
+      "Age": "123",
+      "Address": "12312",
+      "Department": "IA",
+      "Salary": "213",
+      "mstatus": "married",
+      "id": 1653817785063
+    },
+    {
+      "Name": "23",
+      "Age": "21",
+      "Address": "312",
+      "Department": "EC",
+      "Salary": "1231",
+      "mstatus": "unmarried",
+      "id": 1653817872185
+    },
+    {
+      "Name": "123",
+      "Age": "12321",
+      "Address": "123",
+      "Salary": "123",
+      "mstatus": "married",
+      "id": 1653817942005
+    },
+    {
+      "Name": "123",
+      "Age": "213",
+      "Address": "1232131",
+      "Department": "IA",
+      "id": 1653817967767
+    }
+  ]
+}
